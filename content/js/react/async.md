@@ -25,15 +25,15 @@ Why?
 
 ### What is Problematic About this Code?
 
-* Notice how `.then` 
+* Notice the `.then`... 
 * It sets `todos` to a *new array* on every render.
 * The new array means the state has changed, which triggers a render...
 * Which triggers another network call...
 * And the cycle goes on
 
-### componentDidMount
+### Loading initial data
 
-* It's OK to trigger state changes from network calls made
+Trigger network / state changes in `componentDidMount`
 
 ```javascript
 export class App extends React.Component {
@@ -46,18 +46,48 @@ export class App extends React.Component {
 }
 ```
 
-### componentDidUpdate
+### Loading initial data
+
+Hooks version
 
 ```javascript
-export class Loader extends React.Component {
-  state = { data: [] }
+export const App = () => {
+  const [todos, setTodos] = useState([])
 
-  async componentDidUpdate(prevProps) {
-    if (prevProps.url !== this.props.url) {
-      this.setState({ data: [] })
-      const { data } = await api.get(url)
-      this.setState({ data })
-    }
-  }
+  useEffect(() => {
+    (async () => {
+      const { data } = api.get('/todos')
+      setTodos(data)
+    })()
+  })
+
+  return (/* ... */)
 }
 ```
+
+### Network calls when props change
+
+```javascript
+export const Loader = ({ resource }) => {
+  const [collection, setCollection] = useState([])
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await api.get(`/${resource}`)
+      setCollection(data)
+    })()
+  }, [resource])
+
+  // ...
+}
+```
+
+### UI updates
+
+* Developing locally, network requests are *super fast*
+* In production, network requests can take longer
+* Change UI (e.g. "Saving...") in response to user actions
+
+### Exercise
+
+**Exercise 1**: [(link)](https://codesandbox.io/s/async-bmlrk?file=/src/App.js)

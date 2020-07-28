@@ -34,6 +34,7 @@ Q:  How does `App` know about the "on" state of `Switch`?
 * Could ask `Switch` what its state is...
   * Strongly discouraged by React
   * Harder to debug, comprehend, or refactor
+  * Often accomplished through `ref`s
 * Better approach: "lift state up" 
 
 ### Making a Toggle Component
@@ -54,10 +55,6 @@ export const App = () => {
 ```
 
 Visualization: [(link)](http://localhost:3000/js/react/one-way-data/index.html)
-
-### Making a Toggle Component
-
-Demo: [(link)](https://codesandbox.io/s/withered-night-2qrld?file=/src/App.js)
 
 ### Exercise
 

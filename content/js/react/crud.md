@@ -69,10 +69,6 @@ A: Faster! All about performance.
 setTodos([...todos, newTodo])
 ```
 
-### Immutable State
-
-Demo [(link)](https://codesandbox.io/s/amazing-brown-ymvzc?file=/src/App.js)
-
 ### Delete
 
 * Typically we identify the item to remove by its ID
@@ -88,10 +84,6 @@ const removeTodo = (id) => {
   setTodos(todos.filter(todo => todo.id !== id))
 }
 ```
-
-### Delete
-
-Demo [(link)](https://codesandbox.io/s/festive-christian-ecgpc?file=/src/App.js)
 
 ### Update
 
@@ -151,12 +143,20 @@ assocPath(['a', 'b'], 42, { a: { b: 0 } }])
 * Their indices are simply like keys on an object
 
 ```javascript
-const markDone = (index) => {
-  setTodos(assocPath([index, 'done'], true, todos))
+export const App = () => {
+  // ...
+  const markDone = (index) => () => {
+    setTodos(assocPath([index, 'done'], true, todos))
+  }
+  return (
+    <ul className="list-group">
+      {todos.map((todo, i) => (
+        <Todo key={todo.id} onDone={markDone(i)} />
+      ))}
+    </ul>
+  )
 }
 ```
-
-### Demo
 
 ### Exercise
 

@@ -32,12 +32,12 @@ Day 1
 * JS Language
 * Functional Programming (Basics)
 * The DOM
+* React Basics
 
 ### What's In Store {.unnumbered}
 
 Day 2
 
-* React Basics
 * Interactive React
 * JS Tooling
 * React Design Patterns (pt 1)
@@ -49,12 +49,12 @@ Day 3
 * Forms
 * Lifecycle
 * Testing
+* Async React
 
 ### What's In Store {.unnumbered}
 
 Day 4
 
-* Async React
 * React Design Patterns
 * Redux
 * Functional Programming (Ramda)
@@ -67,12 +67,6 @@ Day 5
 * Advanced Forms
 * E2E Testing
 
-### What's In Store {.unnumbered}
-
-Day 5
-
-* Redux
-
 # JS Review
 
 <<(../content/js/es-features/syntax.md)
@@ -81,7 +75,9 @@ Day 5
 # JS Language
 
 <<(../content/js/this.md)
+<<(../content/js/functional/this.md)
 <<(../content/js/scope.md)
+<<(../content/js/functional/closures.md)
 
 # Functional Programming
 
@@ -106,13 +102,6 @@ Day 5
 <<(../content/js/react/lists.md)
 <<(../content/js/react/state-hooks.md)
 
-# Developer Tools
-
-<<(../content/js/tools/packages/index.md)
-<<(../content/js/tools/lint/index.md)
-<<(../content/js/tools/babel/index.md)
-<<(../content/js/tools/webpack/index.md)
-
 # React Design Patterns pt 1
 
 <<(../content/js/react/composition.md)
@@ -121,28 +110,32 @@ Day 5
 # Forms
 
 <<(../content/js/react/forms-controlled.md)
+<<(../content/js/react/lifting-state.md)
 <<(../content/js/react/crud.md)
-<<(../content/js/react/refs.md)
 
 # React Lifecycle
 
-<<(../content/js/react/lifting-state.md)
 <<(../content/js/react/lifecycle.md)
 <<(../content/js/react/lifecycle-hooks.md)
+
+# Async React
+
+<<(../content/js/async/axios.md)
+<<(../content/js/react/async.md)
+
+# Redux
+
+<<(../content/js/react/redux.md)
+
+# Routing
+
+<<(../content/js/react/router.md)
 
 # Testing
 
 <<(../content/js/testing.md)
 
 TODO
-
-# Async React
-
-<<(../content/js/async/runtime/index.md)
-<<(../content/js/async/promises/index.md)
-<<(../content/js/apis/fetch/index.md)
-<<(../content/js/apis/fetch/lab.md)
-<<(../content/js/async/await/index.md)
 
 # React Design Patterns
 
@@ -154,6 +147,12 @@ TODO compound components
 # Redux
 
 TODO
+
+# Overflow
+
+<<(../content/js/react/refs.md)
+<<(../content/js/async/promises.md)
+<<(../content/js/async/async-await.md)
 
 # Functional Programming (Ramda)
 
@@ -170,8 +169,3 @@ TODO
 # E2E Testing
 
 TODO
-
-# Extra
-
-<<(../content/js/functional/closures.md)
-<<(../content/js/functional/this.md)
